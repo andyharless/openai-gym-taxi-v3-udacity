@@ -2,7 +2,7 @@
 
 ## Attempts to solve OpenAI Gym's Taxi-v3 RL environment
 
-The skeleton of this code is from [Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/lab-taxi).  Their version uses Taxi-v2, but this version uses v3, since v2 is deprecated.
+The skeleton of this code is from [Udacity](https://github.com/udacity/deep-reinforcement-learning/tree/master/lab-taxi).  Their version uses Taxi-v2, but this version uses v3, since v2 is deprecated.  (But I also did version 2 [here](https://github.com/andyharless/openai-gym-taxi-v3-udacity).)
 
 The environment is from [here](https://gym.openai.com/envs/Taxi-v3/)
 
