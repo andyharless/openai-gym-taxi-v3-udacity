@@ -1,0 +1,52 @@
+Sending build context to Docker daemon  185.3kB
+Step 1/6 : FROM python:3.8.5
+ ---> 62aa40094bb1
+Step 2/6 : RUN pip install numpy==1.19
+ ---> Using cache
+ ---> fbebf6a364d8
+Step 3/6 : RUN pip install gym==0.17
+ ---> Using cache
+ ---> 06bc772b4b3e
+Step 4/6 : COPY ./*.py /usr/src/
+ ---> Using cache
+ ---> fcdf119349ec
+Step 5/6 : WORKDIR /usr/src
+ ---> Using cache
+ ---> 7165a0355185
+Step 6/6 : CMD ["python", "main.py"]
+ ---> Using cache
+ ---> f755ea671648
+Successfully built f755ea671648
+Successfully tagged taxi:latest
+
+
+Begin Taxi-v3 learning...
+Parameters:
+path_memory_decay=0.7, Q_weight=0.02, recency_weight=1, eps_start=-0.005, eps_decay=5e-05
+learning_rate=0.7, discount_rate=0.5, min_stochasticity=0.0001
+Episode 10000/200000 || epsilon=0.6035056, Best average reward -70.82
+Episode 20000/200000 || epsilon=0.3660446, Best average reward -17.33
+Episode 30000/200000 || epsilon=0.2220173, Best average reward -2.62
+Episode 40000/200000 || epsilon=0.1346603, Best average reward 3.03
+Episode 50000/200000 || epsilon=0.0816756, Best average reward 5.48
+Episode 60000/200000 || epsilon=0.0495388, Best average reward 6.83
+Episode 70000/200000 || epsilon=0.0300468, Best average reward 7.51
+Episode 80000/200000 || epsilon=0.0182243, Best average reward 8.18
+Episode 90000/200000 || epsilon=0.0110536, Best average reward 8.58
+Episode 100000/200000 || epsilon=0.0067043, Best average reward 8.58
+Episode 110000/200000 || epsilon=0.0040664, Best average reward 8.58
+Episode 120000/200000 || epsilon=0.0024664, Best average reward 8.7
+Episode 130000/200000 || epsilon=0.0014959, Best average reward 8.7
+Episode 140000/200000 || epsilon=0.0009073, Best average reward 8.72
+Episode 150000/200000 || epsilon=0.0005503, Best average reward 9.24
+Episode 160000/200000 || epsilon=0.0003338, Best average reward 9.24
+Episode 170000/200000 || epsilon=0.0002025, Best average reward 9.24
+Episode 180000/200000 || epsilon=0.0001228, Best average reward 9.24
+Episode 190000/200000 || epsilon=0.0001000, Best average reward 9.24
+Episode 200000/200000 || epsilon=0.0001000, Best average reward 9.24
+Run 3/1, average so far=9.24
+
+Local seed:  80
+Average:  9.24
+Median:  9.24
+[9.24]
