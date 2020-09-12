@@ -3,9 +3,9 @@ import sys
 import math
 import numpy as np
 
-def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
+def interact(env, agent, num_episodes=20000, window=100, show_progress=False, endline=""):
     """ Monitor agent's performance.
-    
+
     Params
     ======
     - env: instance of OpenAI Gym's Taxi-v1 environment
@@ -13,6 +13,7 @@ def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
     - num_episodes: number of episodes of agent-environment interaction
     - window: number of episodes to consider when calculating average rewards
     - show_progress: whether to show progress during run and how often
+    - endline: character to end progress lines with (usually newline or nothing)
 
     Returns
     =======
@@ -55,9 +56,9 @@ def interact(env, agent, num_episodes=20000, window=100, show_progress=False):
             if avg_reward > best_avg_reward:
                 best_avg_reward = avg_reward
         if show_progress and not i_episode % show_progress:
-            print("\rEpisode {}/{} || Best average reward {}".format(i_episode, num_episodes,
-                                                                     best_avg_reward), end="")
-        sys.stdout.flush()
+            print("\rEpisode {}/{} || epsilon={:.7f}, Best average reward {}".format(
+                 i_episode, num_episodes, agent.epsilon, best_avg_reward), end=endline)
+            sys.stdout.flush()
         # check if task is solved (according to OpenAI Gym)
         if best_avg_reward >= 9.7:
             print('\nEnvironment solved in {} episodes.'.format(i_episode), end="")
