@@ -16,9 +16,9 @@ chmod u+x taxi.sh
 
 It should produce a score (best average reward of 100) of 9.24
 
-(I cheated by using a good seed.)
-
 This version uses a variation on standard Q-learning.  The policy is epsilon-greedy, but when the non-greedy action is chosen, instead of being sampled from a uniform distribution, it is sampled from a distribution that reflects two things:
    - a preference for actions with higher Q values (i.e. "greedy but flexible")
    - a preference for novel actions (those that have recently been less often chosen in the current state)
 The latter are tracked via a "path memory" table (same shape as the Q table), which counts how often each action is taken in each state.  At the end of each episode, path memories from the previous episode decay geometrically.  The sampling distribution for stochastic actions is the softmax of a linear combination of the Q values (with a positive coefficient) and the path memory values (with a negative coefficient).
+
+As of 2020-09-13, this solution is 2nd on the [Leaderboard](https://github.com/openai/gym/wiki/Leaderboard#TaxiV3) fo the v3 Taxi environment at OpenAI Gym (but I cheated by using a good seed).
