@@ -14,9 +14,8 @@ cd openai-gym-taxi-v3-udacity
 chmod u+x taxi.sh
 ./taxi.sh
 ```
-Best average reward 9.11
-Episode 220000/300000 || epsilon=0.00
-It should produce a score (best average reward of 100) of 9.24  (The [`output.txt`](https://github.com/andyharless/openai-gym-taxi-v3-udacity/blob/master/output.txt) file shows a sample output.)
+
+It should produce a score (best average reward of 100) of 9.26  (The [`output.txt`](https://github.com/andyharless/openai-gym-taxi-v3-udacity/blob/master/output.txt) file shows a sample output.)
 
 This version uses a variation on standard Q-learning.  The policy is epsilon-greedy, but when the non-greedy action is chosen, instead of being sampled from a uniform distribution, it is sampled from a distribution that reflects two things:
    - a preference for actions with higher Q values (i.e. "greedy but flexible")
@@ -26,4 +25,4 @@ The latter are tracked via a "path memory" table (same shape as the Q table), wh
 
 The sampling distribution for stochastic actions is the softmax of a linear combination of the Q values (with a positive coefficient) and the path memory values (with a negative coefficient).
 
-As of 2020-09-13, this solution is 2nd on the [Leaderboard](https://github.com/openai/gym/wiki/Leaderboard#TaxiV3) fo the v3 Taxi environment at OpenAI Gym (but I cheated by using a good seed).
+As of 2020-09-13, this solution is 1st on the [Leaderboard](https://github.com/openai/gym/wiki/Leaderboard#TaxiV3) fo the v3 Taxi environment at OpenAI Gym (but I cheated by using a good seed).
