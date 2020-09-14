@@ -25,4 +25,4 @@ The latter are tracked via a "path memory" table (same shape as the Q table), wh
 
 The sampling distribution for stochastic actions is the softmax of a linear combination of the Q values (with a positive coefficient) and the path memory values (with a negative coefficient).
 
-As of 2020-09-13, this solution is 1st on the [Leaderboard](https://github.com/openai/gym/wiki/Leaderboard#TaxiV3) fo the v3 Taxi environment at OpenAI Gym (but I cheated by using a good seed).
+As of 2020-09-13, this solution is 1st on the [Leaderboard](https://github.com/openai/gym/wiki/Leaderboard#TaxiV3) for the v3 Taxi environment at OpenAI Gym (but I cheated by using a good seed).
