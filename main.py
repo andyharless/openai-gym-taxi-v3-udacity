@@ -8,19 +8,19 @@ from math import exp
 import random
 
 # Control parameters
-n_episodes = 200000
+n_episodes = 150000
 nruns = 1
 medsub = nruns // 2
 
 # Learning parameters
 beta=.7
 c1=.02
-c2=1
+c2=3
 alpha=.7
 gamma=.5
 a = -.005
 b = 5e-5
-eps_min = 1e-4
+eps_min = 0
 epfunc = lambda i: max(eps_min, exp(a - b*i))
 
 # Cheating by using a successful seed
